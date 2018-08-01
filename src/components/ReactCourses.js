@@ -29,7 +29,7 @@ export default class ReactCourses extends Component {
 
             />
             <Text>{rowData.link}</Text>
-            <Image source={{url: rowData.image}} style={{width: 400, height: 200}}/>
+            <Image source={{uri: rowData.image}} style={{width: 400, height: 200}}/>
           </View>}
         />
       </View>
