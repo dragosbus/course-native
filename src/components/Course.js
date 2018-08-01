@@ -1,9 +1,10 @@
 import React from 'react';
-import {View, Text, Image, Button} from 'react-native';
+import {View, Text, Image, Button, StyleSheet} from 'react-native';
 
 const Course = (props) =>{
     return (
-        <View>
+        <View style={styles.course}>
+            <Image source={{uri: props.image}} style={styles.image}/>
             <Text>{props.title}</Text>
             <Text>{props.description}</Text>
             <Text>{props.views}</Text>
@@ -11,9 +12,21 @@ const Course = (props) =>{
               title="Link to course"
             />
             <Text>{props.link}</Text>
-            <Image source={{uri: props.image}} style={{width: 400, height: 200}}/>
           </View>
     );
 };
+
+const styles = StyleSheet.create({
+    course: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20
+    },
+    image: {
+        width: "100%",
+        height: 200
+    }
+});
 
 export default Course;

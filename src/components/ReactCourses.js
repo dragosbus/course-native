@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, FlatList, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList} from 'react-native';
 import data from '../data/courses.json';
 
 import Course from './Course';
@@ -11,11 +11,12 @@ export default class ReactCourses extends Component {
   };
   render() {
     const { navigate } = this.props.navigation;
-    console.log(data)
+    
     return (
       <View style={styles.container}>
         <Button onPress={()=>navigate('NativeCourses')} title="React Navite Courses"/>
         <FlatList
+          style={styles.listCourses}
           data={data}
           renderItem={({item}, index)=> <Course key={index} {...item}/>
           }
@@ -32,14 +33,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
+  listCourses: {
+    padding: 10,
   }
 });
