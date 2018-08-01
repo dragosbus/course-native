@@ -1,17 +1,17 @@
 import React from 'react';
 import {View, Text, Image, Button, StyleSheet} from 'react-native';
+import {getTheme} from 'react-native-material-kit';
+
+const theme = getTheme();
 
 const Course = (props) =>{
     return (
-        <View style={styles.course}>
-            <Image source={{uri: props.image}} style={styles.image}/>
-            <Text>{props.title}</Text>
-            <Text>{props.description}</Text>
-            <Text>{props.views}</Text>
-            <Button 
-              title="Link to course"
-            />
-            <Text>{props.link}</Text>
+        <View style={theme.cardStyle}>
+            <Image source={{uri: props.image}} style={theme.cardImageStyle}/>
+            <Text style={theme.cardTitleStyle}>{props.title}</Text>
+            <Text style={theme.cardContentStyle}>{props.description}</Text>
+            <Text style={theme.cardActionStyle}
+            onPress={()=>props.handleLink(props.link)}>Tap to link</Text>
           </View>
     );
 };

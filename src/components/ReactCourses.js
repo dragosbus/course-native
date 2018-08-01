@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, FlatList} from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList, Linking} from 'react-native';
 import data from '../data/courses.json';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Course from './Course';
 
-
 export default class ReactCourses extends Component {
   static navigationOptions = {
-    title: 'React Courses'
+    tabBarIcon: ({tintColor}) => {
+      return <Icon
+        name={"home"}
+        size={26}
+        style={{color: tintColor}}
+      />
+    }
   };
-  render() {
-    const { navigate } = this.props.navigation;
-    
+
+  handleLink(link) {
+    Linking.canOpenURL(link).then(supported=> {
+      if(supported) {
+        Linking.openURL(link);
+      } else {
+        console.log('dont know');
+      }
+    })
+  }
+
+  render() {    
     return (
       <View style={styles.container}>
-        <Button onPress={()=>navigate('NativeCourses')} title="React Navite Courses"/>
+        <Text>React Courses</Text>
         <FlatList
           style={styles.listCourses}
           data={data}
-          renderItem={({item}, index)=> <Course key={index} {...item}/>
+          renderItem={({item}, index)=> <Course key={index} {...item} handleLink={this.handleLink.bind(this)}/>
           }
         />
       </View>
@@ -35,5 +50,9 @@ const styles = StyleSheet.create({
   },
   listCourses: {
     padding: 10,
+  },
+  icon: {
+    width: 26,
+    height: 26
   }
 });
