@@ -15,8 +15,11 @@ const courses = TabNavigator({
         activeTintColor: '#e91e63',
         swipeEnabled: true,
         tabBarPosition: 'bottom',
-        activeTintColor: 'tomato',
+        activeTintColor: 'white',
         inactiveTintColor: 'gray',
+        style: {
+            backgroundColor: '#25a69a'
+        }
     }
 });
 
