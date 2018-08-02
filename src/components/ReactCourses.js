@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   listCourses: {
-    padding: 10,
+    padding: 10
   },
   icon: {
     width: 26,
