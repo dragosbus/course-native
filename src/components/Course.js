@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     },
     title: {
         width: '100%',
-        fontSize: 20,
+        fontSize: 17,
         backgroundColor: 'rgba(255,255,255,0.3)',
         marginLeft: -25,
         marginRight:'auto',

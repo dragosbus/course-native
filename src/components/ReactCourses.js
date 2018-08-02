@@ -33,7 +33,7 @@ export default class ReactCourses extends Component {
         <FlatList
           style={styles.listCourses}
           data={data}
-          renderItem={({item}, index)=> <Course key={index} {...item} handleLink={this.handleLink.bind(this)}/>
+          renderItem={({item})=> <Course key={item.id} {...item} handleLink={this.handleLink.bind(this)}/>
           }
         />
       </View>
