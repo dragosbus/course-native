@@ -5,15 +5,6 @@ import data from '../data/courses.json';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class App extends Component {
-  static navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-        <Icon
-            name={'settings-cell'}
-            size={26}
-            style={{color: tintColor}}
-        />
-    )
-  };
   render() {
     return (
       <View style={styles.container}>

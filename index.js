@@ -1,24 +1,22 @@
 /** @format */
 
 import {AppRegistry} from 'react-native';
-import {TabNavigator, TabBarBottom} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation';
 import ReactCourses from './src/components/ReactCourses';
 import NativeCourses from'./src/components/NativeCourses';
 
 
-const courses = TabNavigator({
+const courses = createBottomTabNavigator({
     ReactCourses: {screen: ReactCourses},
     NativeCourses: {screen: NativeCourses}
 }, {
     tabBarOptions: {
-        tabBarComponent: TabBarBottom,
-        activeTintColor: '#e91e63',
         swipeEnabled: true,
         tabBarPosition: 'bottom',
-        activeTintColor: 'white',
+        activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
         style: {
-            backgroundColor: '#25a69a'
+            backgroundColor: '#fff'
         }
     }
 });
