@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, Linking} from 'react-native';
 import data from '../data/courses.json';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Course from './Course';
 
 export default class ReactCourses extends Component {
+  static navigationOptions = {
+    tabBarIcon: ({tintColor}) => {
+      return <Icon
+        name={"pinterest"}
+        size={26}
+        style={{color: tintColor}}
+      />
+    }
+  };
 
   handleLink(link) {
     Linking.canOpenURL(link).then(supported=> {

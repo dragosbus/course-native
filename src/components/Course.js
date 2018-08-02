@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         fontSize: 17
     },
     courseLink: {
-        backgroundColor: 'steelblue'
+        
     }
 });
 
